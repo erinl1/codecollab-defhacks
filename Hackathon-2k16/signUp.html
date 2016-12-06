@@ -1,0 +1,412 @@
+<html>
+<body>
+  <head>
+
+
+      <link rel="shortcut icon" href="actualfavicon.ico" type="image" />
+
+    <title>codecollab SIGN UP</title>
+
+      <link rel="shortcut icon" href="actualfavicon.ico" type="image" />
+
+    <title>codecollab SIGN UP</title>
+  <style>
+   #next{
+    background-color: orange;
+    border-color: orange;
+    border-bottom: orange;
+    border-right: orange;
+    color:white;
+    font-family: arial;
+    font-size: 20px;
+    border-radius: 10px 10px 10px 10px;
+       -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+   }
+   #next:hover { color:orange; background-color: white; border-color: orange;};
+
+  </style>
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDubsm5elKPJO-jtOXA8rUNBSXKM4fiTs0",
+        authDomain: "code-collab-7a3f3.firebaseapp.com",
+        databaseURL: "https://code-collab-7a3f3.firebaseio.com",
+        storageBucket: "code-collab-7a3f3.appspot.com",
+        messagingSenderId: "589628855045"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+    <style>
+    body {
+      font-family: 'Century Gothic';
+      font-size: 13px;
+.
+    }
+    </style>
+</head>
+    <div class = "container">
+      <div class="row" background="background.gif">
+        <div class="hidden alert alert-success">You have signed up for an account.</div>
+        <br>
+        <center><img src = 'logo.png'></center>
+      </div>
+      <div class="row">
+        <form>
+
+          <div class = "container">
+          <div class="col-md-3">
+            <br><br/>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="text" class="form-control" id="email" placeholder="email address">
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="user" placeholder="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="password">
+
+            </div>
+            <div>
+             <button id="next" onclick="redirect()">Ready!</button>
+            </div>
+          </div>
+
+          <div class = "col-md-2"></div>
+
+
+          <div class = "col-md-3">
+            <div class="toknow">
+
+
+            <div class="form-group">
+              <br><br>
+              <label for="age"> Codes you know </label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> C
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Clojure
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Coffeescript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> C++
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Crystal
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> C#
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Dart<
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Elixir
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> F#
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Haskell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Java
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Javascript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> CSS
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> PHP
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Python
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Ruby
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> HTML
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Shell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> SQL
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Swift
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Typescript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Other
+                </label>
+              </div>
+            </div>
+            <br><br/>
+            <br>
+            <br>
+          </div>
+          </div>
+
+
+
+
+          <div class="col-md-3">
+            <div class="tolearn">
+
+
+            <div class="form-group">
+              <br><br>
+              <label for="facebook"> Codes you want to know </label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> C
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Clojure
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Coffeescript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> C++
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Crystal
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> C#
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Dart
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Elixir
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> F#
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Haskell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Java
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Javascript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> CSS
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> PHP
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Python
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Ruby
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> HTML
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Shell
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> SQL
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Swift
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Typescript
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Other
+                </label>
+              </div>
+            </div>
+            </div>
+          </div>
+          <br>
+          <br>
+        </form>
+      </div>
+    </head>
+    <script>
+      function redirect(){
+        window.location.href = "loginpage.html";
+      }
+
+      $("form").submit(function (event){
+        event.preventDefault();
+        if($("#name").val()==""||$("#email").val()==""||$("#user").val()==""||
+        $("#name").val()==""){
+          $(".alert-success").removeClass("hidden");
+        }
+      });
+      function writeUserData(user, name, email, pword,languages) {
+        firebase.database().ref('users/' + user).set({
+          username: user,
+          email: email,
+          name: name,
+          password:pword,
+          languages:languages
+
+
+        });
+      }
+      //$( "#button" ).click(function() {
+
+        var languages = {
+          'tolearn': [],
+          'toknow': []
+        };
+        $('div > label > input').on('click', function() {
+          var name = $("#name").val();
+          sessionStorage.setItem('name', name);
+          var email = $("#email").val();
+          sessionStorage.setItem('email', email);
+          var user = $("#user").val();
+          var pword = $("#password").val();
+          var learnOrKnow = $(this).parent().parent().parent().parent().attr("class");
+          var selectingLan = $(this).parent().text().trim()
+          languages[learnOrKnow].push(selectingLan);
+          console.log(languages);
+          writeUserData(user,name,email,pword,languages);
+        });
+
+
+  //    });
+
+
+
+    </script>
+  </body>
+  </html>

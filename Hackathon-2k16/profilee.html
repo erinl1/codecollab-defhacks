@@ -1,0 +1,97 @@
+<html>
+
+	<head>
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDubsm5elKPJO-jtOXA8rUNBSXKM4fiTs0",
+				authDomain: "code-collab-7a3f3.firebaseapp.com",
+				databaseURL: "https://code-collab-7a3f3.firebaseio.com",
+				storageBucket: "code-collab-7a3f3.appspot.com",
+				messagingSenderId: "589628855045"
+			};
+			firebase.initializeApp(config);
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+				<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+		<style>
+    body {
+			background-image : 'newrainingcode.png';
+      background-repeat: no-repeat;
+			background-position: center;
+		}
+		h1 {
+		font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+#rcorners {
+	border-radius: 5px;
+	background: #DFFBE3   ;
+	padding: 20px;
+	width: 500px;
+	height: 600px;
+}
+
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<title> CodeCollab login page</title>
+	</head>
+<body background='newrainingcode.png'>
+	<div class="fluid-container">
+		<div class="row">
+	        <br><center><img src = 'logo.png'></center>
+      <div><center><h1><u><div class="acc">
+
+      </div></u></h1></center></div>
+			<br>
+		</div>
+		<center>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				</center><div id="stuff" style="font-size:20px;"></div>
+			</div>
+			<div class="col-md-1"></div>
+			</center>
+		</div>
+		</body>
+		<script>
+			var email;
+			var query = firebase.database().ref("users").orderByKey();
+			document.addEventListener('DOMContentLoaded', function() {
+				query.once("value")
+				  .then(function(snapshot) {
+				    snapshot.forEach(function(childSnapshot) {
+							var email = childSnapshot.val().email;
+
+				});
+			});
+						var username = sessionStorage.getItem('username');
+						var learn = sessionStorage.getItem('toLearn');
+						var know = sessionStorage.getItem('toKnow');
+						var username = sessionStorage.getItem('username');
+						var name = sessionStorage.getItem('name');
+
+
+				$(".acc").append(username+"'s Profile");
+				$("#stuff").append("<center><b>Name </b><br>"+name+"<br><b>Username </b><br>"+username+"<br><b>Email </b><br>"+email+"</center>");
+
+
+			}, false);
+		</script>
+</html>

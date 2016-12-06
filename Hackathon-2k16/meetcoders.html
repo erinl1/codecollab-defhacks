@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+		<style>
+		#rcorners {
+    	border-radius: 25px;
+    	background: #D6C738  ;
+    	padding: 20px;
+    	width: 600px;
+    	height: 150px;
+}
+
+		body {
+			font-family: 'Century Gothic';
+			font-size: 17px;
+		}
+
+		 .container{
+			 background-color: #DACB3B  ;
+			 width: 600;
+			 height: 300;
+			 align-content: right;
+		 }
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<title> CodeCollab login page</title>
+	</head>
+		<body background = 'mainpagebackground.jpg'>
+			<div class = "col-md-3">
+			    <br><img src = 'logo.png'></div>
+			<div class = "col-md-3"></div>
+			<br><br>
+			<div class = "col-md-6" id = "divv"></div>
+		</body>
+		<script>
+			for(i = 0; i<=100; i++){
+				$("#divv").append('<br><div style="text-align:right" class="container" id = "rcorners"><div><br><ul type="button" class="cancelbtn" onclick="change()"><a href=signUp.html>Delete?</a></ul></div></div><br>');
+			}
+		</script>
+</html>

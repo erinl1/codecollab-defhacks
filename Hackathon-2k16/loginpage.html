@@ -1,0 +1,185 @@
+<html>
+	<head>
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDubsm5elKPJO-jtOXA8rUNBSXKM4fiTs0",
+				authDomain: "code-collab-7a3f3.firebaseapp.com",
+				databaseURL: "https://code-collab-7a3f3.firebaseio.com",
+				storageBucket: "code-collab-7a3f3.appspot.com",
+				messagingSenderId: "589628855045"
+			};
+			firebase.initializeApp(config);
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<link rel="shortcut icon" href="actualfavicon.ico" type="image/x-icon" />
+		<title> CodeCollab login page</title>
+		<style>
+			h1 {
+				text-align: center;
+				font-family: 'Quicksand', sans-serif;
+			}
+			body {
+				text-align: center;
+				margin: auto;
+
+				background-size: cover;
+			}
+			form {
+			   	border: 3px solid #f1f1f1;
+			    width:30%;
+			    position: center;
+			    margin: auto;
+			   	font-family: 'Quicksand', sans-serif;
+
+			}
+			input[type=text], input[type=password] {
+			    width: 100%;
+			    padding: 12px 20px;
+			    margin: 8px 0;
+			    display: inline-block;
+			    border: 1px solid #ccc;
+			    box-sizing: border-box;
+				font-family: 'Quicksand', sans-serif;
+
+			}
+			button {
+			    background-color:f1f1f1;
+			    color: orange;
+			    padding: 14px 20px;
+			    align-content:center;
+			    border-radius: 10px 10px 10px 10px;
+		        border:0px;
+			    cursor: pointer;
+			    width: 40%;
+			    font-size: 20px;
+				font-family: 'Quicksand', sans-serif;
+				font-weight: bold;
+				   -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+
+			}
+			button:hover{color:white;}
+			button:hover{background-color: orange;}
+			.imgcontainer {
+			    width:60%;
+			    text-align: center;
+			    margin: 24px 0 12px 0;
+			}
+
+
+
+			.container {
+			    padding: 16px;
+
+			}
+
+			span.psw {
+			    float: right;
+			    padding-top: 16px;
+			}
+			.cancelbtn {
+			    width: auto;
+			    padding: 10px 18px;
+			    font-size: 18px;
+			    margin-left: 0px;
+			    border: none;
+				font-family: 'Quicksand', sans-serif;
+
+			}
+			#up{
+				color:orange;
+	 -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+			}
+			#up:hover{color:white;}
+
+		</style>
+	</head><br>
+		<center><body></center>
+			<img src="logo.png">
+			<h1>The Login Page</h1>
+			<form name="login">
+			<div class="container">
+    <label><b></b></label>
+    <input id="username" type="text" placeholder="ex: Johnsmith123" name="userid" required>
+
+    <label><b></b></label>
+    <input id="pWord"type="password" placeholder="ex: **********" name="psw"  required>
+
+    <button id="button" type="button">Enter</button>
+
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <ul type="button" class="cancelbtn" id="up"onclick="change()"><a id="up" href=signUp.html>Sign Up</a></ul>
+
+  </div>
+</form>
+<!--<script language="javascript">
+ function check(form) {
+
+                if(form.userid.value == "Zathoroth@icloud.com" && form.psw.value == "Subzero99@") {
+                  window.location.href = "CliqueFuze.html";
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
+function change(){
+  window.location.href = "Clique%20Fuze%20Sign.html";
+}
+</script>
+-->
+
+
+	<script type="text/javascript">
+		$( "#button" ).click(function() {
+
+			var usernameEnter = $('#username').val();
+			var pwordEnter = $('#pWord').val();
+
+			// Loop through users in order with the forEach() method. The callback provided
+			// to will be called synchronously with a DataSnapshot for each child:
+			var query = firebase.database().ref("users").orderByKey();
+			query.once("value")
+			  .then(function(snapshot) {
+			    snapshot.forEach(function(childSnapshot) {
+			      // key will be "ada" the first time and "alan" the second time
+			      var key = childSnapshot.key;
+						console.log(key);
+			      var password = childSnapshot.val().password;
+						console.log(password);
+						var toKnow = childSnapshot.val().languages.toknow;
+						var toLearn = childSnapshot.val().languages.tolearn;
+						if (usernameEnter == key) {
+							if (pwordEnter == password) {
+									sessionStorage.clear();
+									window.location = "index.html";
+									sessionStorage.setItem('username', key);
+									sessionStorage.setItem('toKnow', toKnow);
+									sessionStorage.setItem('toLearn', toLearn);
+									var email1 = sessionStorage.getItem('email');
+									sessionStorage.setItem('email', email);
+							}else {
+							}
+						}else {
+						}
+
+
+
+
+			  });
+			});
+
+
+		});
+	</script>
+	</body>
+</html>
