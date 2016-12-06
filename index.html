@@ -1,122 +1,142 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Lucas Stettner</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
     <style media="screen">
       @font-face {
+        font-family: "Lucas";
+        src: url(Lucas.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "Coding";
+        src: url(earthorbiter.ttf) format("truetype");
+      }
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+      html{height:100%;background-color: #F3F3F3;}
+      body {
+        position: relative;
+        height:100%;background-color: #F3F3F3;
+      }
+      @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+      .fade-in {
+        opacity:0;  /* make things invisible upon start */
+        -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation:fadeIn ease-in 1;
+        animation:fadeIn ease-in 1;
+
+        -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+
+        -webkit-animation-duration:1s;
+        -moz-animation-duration:1s;
+        animation-duration:1s;
+      }
+
+      .fade-in.name {
+        position: absolute;
+        margin: 0 auto;
+        -webkit-animation-delay: 0.7s;
+        -moz-animation-delay: 0.7s;
+        animation-delay: 0.7s;
+        font-family: Coding;
+        font-size: 80px;
+        display:flex;
+        margin-left: 425px
+
+      }
+      .first_Name {
+        color: #f4a442;
+      }
+      .left {
+        background-color: #F3F3F3;
+        float: left;
+        width: 50%;
+        height:100%;
+        margin: auto;
+
+      }
+      .right {
+        background-color: #F3F3F3;
+        float: left;
+        width: 50%;
+        height:100%;
+        margin: auto;
+      }
+      .fade-in.coding {
+        opacity: 0.1;
         font-family: Lucas;
-        src: url(LostinWild.ttf);
-      }
-      body{
-      	text-align: center;
-      	background: black;
-        font-family: sans-serif;
-        font-weight: 100;
-      }
+        color: #d2cfcf;
+        font-size: 150px;
+        margin-top: 250px;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
 
-      h1{
-        color: white;
-        font-weight: 100;
-        font-size: 40px;
-        margin: 40px 0px 20px;
+      }
+      .fade-in.about {
+        opacity: 0.1;
         font-family: Lucas;
+        color: #d2cfcf;
+        font-size: 150px;
+        margin-top: 250px;
+        transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;
+
+      }
+      .coding:hover {
+        opacity: 1;
+        color: #6f90ab;
+        font-size: 160px;
+      }
+      .about:hover {
+        opacity: 1;
+        color: #6f90ab;
+        font-size: 160px;
       }
 
-      #clockdiv{
-      	font-family: sans-serif;
-      	color: white;
-      	display: inline-block;
-      	font-weight: 100;
-      	text-align: center;
-      	font-size: 30px;
+      .right:hover {
+        background-color: #E3E3E3;
       }
-
-      #clockdiv > div{
-      	padding: 10px;
-      	border-radius: 3px;
-      	background: #7a0404;
-      	display: inline-block;
-      }
-
-      #clockdiv div > span{
-      	padding: 15px;
-      	border-radius: 3px;
-      	background: #127929;
-      	display: inline-block;
-      }
-
-      .smalltext{
-      	padding-top: 5px;
-      	font-size: 16px;
+      .left:hover {
+        background-color: #E3E3E3;
       }
     </style>
-    <meta charset="utf-8">
-
   </head>
   <body>
-    <br><br><br><br><br><br><br><br><br><br><br>
-    <h1>Lucas's Mixtape Drop</h1><br><br><br>
-    <div id="clockdiv">
-      <div>
-        <span class="days"></span>
-        <div class="smalltext">Days</div>
-      </div>
-      <div>
-        <span class="hours"></span>
-        <div class="smalltext">Hours</div>
-      </div>
-      <div>
-        <span class="minutes"></span>
-        <div class="smalltext">Minutes</div>
-      </div>
-      <div>
-        <span class="seconds"></span>
-        <div class="smalltext">Seconds</div>
-      </div>
+    <center><div class="fade-in name">
+     <div class="first_Name">Lucas</div> <div class="last_Name">Stettner</div>
+   </div></center>
+
+    <div class="left">
+    <div id="coding" class="fade-in coding"><center>
+    WORK
+  </center></div>
+    </div>
+    <div class="right">
+      <div id="about" class="fade-in about"><center>
+      CONTACT
+      </center></div>
     </div>
 
-
     <script type="text/javascript">
-    function getTimeRemaining(endtime) {
-      var t = Date.parse(endtime) - Date.parse(new Date());
-      var seconds = Math.floor((t / 1000) % 60);
-      var minutes = Math.floor((t / 1000 / 60) % 60);
-      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-      var days = Math.floor(t / (1000 * 60 * 60 * 24));
-      return {
-        'total': t,
-        'days': days,
-        'hours': hours,
-        'minutes': minutes,
-        'seconds': seconds
-      };
-    }
+      $('#coding').click(function(){
+        window.location.href = "codingTest.html";
 
-    function initializeClock(id, endtime) {
-      var clock = document.getElementById(id);
-      var daysSpan = clock.querySelector('.days');
-      var hoursSpan = clock.querySelector('.hours');
-      var minutesSpan = clock.querySelector('.minutes');
-      var secondsSpan = clock.querySelector('.seconds');
+      });
 
-      function updateClock() {
-        var t = getTimeRemaining(endtime);
+      $('#about').click(function(){
+        window.location.href = "about.html";
 
-        daysSpan.innerHTML = t.days;
-        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-        if (t.total <= 0) {
-          clearInterval(timeinterval);
-        }
-      }
-
-      updateClock();
-      var timeinterval = setInterval(updateClock, 1000);
-    }
-
-    var deadline = 'December 24 2016 23:59:59 GMT+0200';
-    initializeClock('clockdiv', deadline);
+      });
     </script>
+
+
   </body>
 </html>

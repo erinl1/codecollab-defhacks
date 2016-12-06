@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Contact</title>
+
+    <style media="screen">
+      @font-face {
+        font-family: "Lucas";
+        src: url(Lucas.ttf) format("truetype");
+      }
+      @font-face {
+        font-family: "Coding";
+        src: url(earthorbiter.ttf) format("truetype");
+      }
+
+      .name {
+        position: absolute;
+        margin: 0 auto;
+        font-family: Coding;
+        font-size: 80px;
+        display:flex;
+        position: fixed;
+        color: #8e8e8e;
+      }
+      .first_Name {
+        color: #f4a442;
+      }
+
+      .contact{
+
+
+        font-family: Coding;
+        font-size: 50px;
+        color: #8e8e8e;
+      }
+      .label {
+        font-family: Coding;
+        font-size: 38px;
+        color: #8e8e8e;
+      }
+    </style>
+  </head>
+  <body>
+    <center><div class="name">
+      <div class="first_Name">Lucas</div> <div class="last_Name">Stettner</div>
+    </center>
+    </div><br><br><br><br><br>
+    <div class="contact">
+      <b>Contact Me</b>
+
+    </div><br><br><br><br><br>
+    <div class="label">
+      Email: <u onclick="email()">Click Here to Email Me</u>
+
+
+    </div><br><br>
+    <a href="https://twitter.com/LucasStettner" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @LucasStettner</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    function email() {
+       window.location.href = "mailto:lucas.stettner@gmail.com?subject=Hey!";
+     }
+     $('.name').click(function(){
+       window.location.href = "index.html";
+
+     });
+
+
+    </script>
+    </body>
+</html>
