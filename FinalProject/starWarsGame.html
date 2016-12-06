@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+
+        });
+    </script>
+    <style media="screen">
+        body,
+        html,
+        .main {
+            height: 100%;
+        }
+
+        section {
+            min-height: 100%;
+        }
+
+        @font-face {
+            font-family: "Lucas";
+            src: url("Paskowy.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Star";
+            src: url("Death Star.otf");
+        }
+
+        @font-face {
+            font-family: "Hint";
+            src: url("Rebellion.otf");
+        }
+
+        body {
+            background-image: url("death-star-movie-20143.jpg");
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .enjoy-css {
+            display: inline-block;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            padding: 10px 20px;
+            border: 1px solid #FFD700;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            font: normal 16px/normal "geostar-fill", Helvetica, sans-serif;
+            color: rgb(255, 215, 0);
+            -o-text-overflow: clip;
+            text-overflow: clip;
+            background: #000000;
+            text-shadow: 0 0 9px rgb(255, 215, 0);
+            -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+            -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+            -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+            transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        }
+
+        .css_btn_class {
+            font-size: 16px;
+            font-family: Arial;
+            font-weight: normal;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            border: 1px solid #dcdcdc;
+            padding: 9px 18px;
+            text-decoration: none;
+            background: -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100%);
+            background: -ms-linear-gradient( top, #ededed 5%, #dfdfdf 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf));
+            background-color: #ededed;
+            color: #777777;
+            display: inline-block;
+            text-shadow: 1px 0px 0px #ffffff;
+            -webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+            -moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+            box-shadow: inset 1px 1px 0px 0px #ffffff;
+        }
+
+        .css_btn_class:hover {
+            background: -moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100%);
+            background: -ms-linear-gradient( top, #dfdfdf 5%, #ededed 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #dfdfdf), color-stop(100%, #ededed));
+            background-color: #dfdfdf;
+        }
+
+        .css_btn_class:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .hint {
+            position: fixed;
+        }
+
+        .myButton {
+            -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+            -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+            box-shadow: inset 0px 1px 0px 0px #ffffff;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+            background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);
+            background-color: #ffffff;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            border: 1px solid #dcdcdc;
+            display: inline-block;
+            cursor: pointer;
+            color: #666666;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 10px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .myButton:hover {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+            background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff', GradientType=0);
+            background-color: #f6f6f6;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .fixme {
+          margin-left: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <section>
+            <br>
+            <div class="guess" style="position:fixed;">
+                <center><label for="guess" style="font-family:Lucas;color:white;font-size:35px;">Guess:</label></center>
+                <center><input id="input" name="guess" class="enjoy-css" /></center><br>
+                <center><a id="submit" class="myButton">Submit</a></center>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <center>
+                <div id="test">
+
+                </div>
+            </center>
+        </section>
+    </div>
+
+    <div class="main" id="section2">
+        <section>
+            <center>
+                <h1 style="color:white;font-family:Star;font-size:100px;">Star Wars Quiz</h1></center><br><br><br><br><br><br>
+            <center><a href="#section3" id="button" style="color:#FFD700;font-family:Lucas;font-size:80px;" onclick="timedText()">Show My First Hint</a></center>
+        </section>
+    </div>
+
+    <div class="main" id="section3">
+        <section>
+            <br>
+
+            <br><br><br><br><br><br>
+            <center><a style="color:#FFD700;font-family:Lucas;font-size:80px;">The First Hint is</a></center><br>
+            <div id="hintDiv"></div>
+            <br><br><br>
+            <center>
+                <p id="demo" style="color:#FFD700;font-family:Lucas;font-size:70px;"></p>
+                <a id="aNext" href="#"></a>
+            </center>
+        </section>
+    </div>
+
+    <div class="main" id="section4">
+        <section>
+          <div id="score" class="fixme">
+
+          </div>
+        </section>
+    </div>
+
+    <script type="text/javascript">
+        var score;
+        function scores() {
+          $('#score').html('');
+          $("#score").append("<a style=color:white;font-size:30px;font-family:Star;>Score:"+score+"</a>");
+        }
+        function subtractOne() {
+          score = 10
+          score = score - 1 ;
+          console.log(score);
+        }
+        function scrolling() {
+
+
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+        }
+
+        function timedText() {
+            setTimeout(myTimeout10, 1000)
+            setTimeout(myTimeout9, 2000)
+            setTimeout(myTimeout8, 3000)
+            setTimeout(myTimeout7, 4000)
+            setTimeout(myTimeout6, 5000)
+            setTimeout(myTimeout5, 6000)
+            setTimeout(myTimeout4, 7000)
+            setTimeout(myTimeout3, 8000)
+            setTimeout(myTimeout2, 9000)
+            setTimeout(myTimeout1, 10000)
+        }
+        var aTHing = "<center><a href=#section4 style=color:#FFD700;font-family:Lucas;font-size:80px;>Next Hint</a></center>";
+
+        function myTimeout1() {
+            document.getElementById("demo").innerHTML = "<a href= " + "#section4 style=color:#FFD700;font-family:Lucas;font-size:80px; onclick=subtractOne();scores();" + ">Next Hint</a>";
+
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        }
+
+        function myTimeout2() {
+            document.getElementById("demo").innerHTML = "2";
+        }
+
+        function myTimeout3() {
+            document.getElementById("demo").innerHTML = "3";
+        }
+
+        function myTimeout4() {
+            document.getElementById("demo").innerHTML = "4";
+        }
+
+        function myTimeout5() {
+            document.getElementById("demo").innerHTML = "5";
+        }
+
+        function myTimeout6() {
+            document.getElementById("demo").innerHTML = "6";
+        }
+
+        function myTimeout7() {
+            document.getElementById("demo").innerHTML = "7";
+        }
+
+        function myTimeout8() {
+            document.getElementById("demo").innerHTML = "8";
+        }
+
+        function myTimeout9() {
+            document.getElementById("demo").innerHTML = "9";
+        }
+
+        function myTimeout10() {
+            document.getElementById("demo").innerHTML = "10";
+        }
+
+
+
+
+
+        function titleCase(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        var name = sessionStorage.getItem('name');
+        $("#test").append("<a href=" + "#section2" + "><h1 style=" + "color:white;font-family:Lucas;font-size:100px;color:#FFD700;text-decoration:none;" + ">" + "Welcome Back, " + name + "</h1></a>");
+        var random = Math.floor(Math.random() * 88) + 1
+        $("#button").click(function() {
+            $.ajax({
+                type: "GET",
+                url: "http://swapi.co/api/people/" + random + "/",
+                success: (response) => {
+                    console.log(response.name);
+                    var random1 = Math.floor(Math.random() * 7) + 1
+                    var hint1;
+                    if (random1 == 1) {
+                        hint1 = "Height: " + titleCase(response.height)
+                    } else if (random1 == 2) {
+                        hint1 = "Weight:" + titleCase(response.mass)
+                    } else if (random1 == 3) {
+                        hint1 = "Hair: " + titleCase(response.hair_color)
+                    } else if (random1 == 4) {
+                        hint1 = "Skin Color: " + titleCase(response.skin_color)
+                    } else if (random1 == 5) {
+                        hint1 = "Eye Color: " + titleCase(response.eye_color)
+                    } else if (random1 == 6) {
+                        hint1 = "Birth Year: " + titleCase(response.birth_year)
+                    } else if (random1 == 7) {
+                        hint1 = "Gender: " + titleCase(response.gender)
+                    } else {
+                        hint1 = "null"
+                    }
+
+                    $("#hintDiv").append("<center><h1 style=" + "color:white;font-family:Hint;font-size:50px;" + ">" + hint1 + "</h1></center>");
+                    $("#submit").click(function() {
+                        var inputValue = $("#input").val();
+                        if (inputValue == response.name) {
+                            $("#score").append("<a style=color:white;font-size:70px;font-family:Star;>Score:"+10+"</a>");
+                            window.location.href = "#section4";
+                        } else {
+                            console.log("wrong");
+                            score = score - 1;
+                            $("#score").append("<a style=color:white;font-size:70px;font-family:Star;>Score:"+8+"</a>");
+
+                        }
+                    });
+                }
+            });
+        });
+        var fixmeTop = $('.fixme').offset().top;
+        $(window).scroll(function() {
+        var currentScroll = $(window).scrollTop();
+        if (currentScroll >= fixmeTop) {
+        $('.fixme').css({
+            position: 'fixed',
+            top: '0',
+            left: '0'
+        });
+        } else {
+        $('.fixme').css({
+            position: 'static'
+        });
+    }
+});
+    </script>
+</body>
+
+</html>
