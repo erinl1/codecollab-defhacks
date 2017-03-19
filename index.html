@@ -1,142 +1,133 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lucas Stettner</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<head>
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDubsm5elKPJO-jtOXA8rUNBSXKM4fiTs0",
+				authDomain: "code-collab-7a3f3.firebaseapp.com",
+				databaseURL: "https://code-collab-7a3f3.firebaseio.com",
+				storageBucket: "code-collab-7a3f3.appspot.com",
+				messagingSenderId: "589628855045"
+			};
+			firebase.initializeApp(config);
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <style media="screen">
-      @font-face {
-        font-family: "Lucas";
-        src: url(Lucas.ttf) format("truetype");
-      }
-      @font-face {
-        font-family: "Coding";
-        src: url(earthorbiter.ttf) format("truetype");
-      }
-      @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
-      html{height:100%;background-color: #F3F3F3;}
-      body {
-        position: relative;
-        height:100%;background-color: #F3F3F3;
-      }
-      @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-      @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-      @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-      .fade-in {
-        opacity:0;  /* make things invisible upon start */
-        -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-        -moz-animation:fadeIn ease-in 1;
-        animation:fadeIn ease-in 1;
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+		<style>
+		.floating-box {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+}
 
-        -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-        -moz-animation-fill-mode:forwards;
-        animation-fill-mode:forwards;
+.after-box {
+    clear: left;
+}
+		#rcorners {
+    	border-radius: 25px;
+    	background: #ffffff  ;
+    	padding: 20px;
+    	width: 600px;
+    	height: 135px;
+}
+		span {
+			height: 200px;
+			width: 200px;
+		}
+		body {
+			font-family: 'Century Gothic';
+			font-size: 17px;
+		}
 
-        -webkit-animation-duration:1s;
-        -moz-animation-duration:1s;
-        animation-duration:1s;
-      }
+		 .container{
+			 width: 500;
+			 height: 175;
+		 }
 
-      .fade-in.name {
-        position: absolute;
-        margin: 0 auto;
-        -webkit-animation-delay: 0.7s;
-        -moz-animation-delay: 0.7s;
-        animation-delay: 0.7s;
-        font-family: Coding;
-        font-size: 80px;
-        display:flex;
-        margin-left: 425px
+		 .x{
+		 	width: 50px;
+			height: 50px;
+		 }
 
-      }
-      .first_Name {
-        color: #f4a442;
-      }
-      .left {
-        background-color: #F3F3F3;
-        float: left;
-        width: 50%;
-        height:100%;
-        margin: auto;
+		 .check{
+			 width: 50px;
+			 height: 50px;
+		 }
+		 .acc{
+		 	color : black;
+			float: right;
+			font-size: 20px;
+		 }
+		 .acc1{
+			color : black;
+			float:right;
+			font-size: 20px;
+		 }
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<title>Code Collab</title>
+	</head>
 
-      }
-      .right {
-        background-color: #F3F3F3;
-        float: left;
-        width: 50%;
-        height:100%;
-        margin: auto;
-      }
-      .fade-in.coding {
-        opacity: 0.1;
-        font-family: Lucas;
-        color: #d2cfcf;
-        font-size: 150px;
-        margin-top: 250px;
-        transition: opacity .25s ease-in-out;
-        -moz-transition: opacity .25s ease-in-out;
-        -webkit-transition: opacity .25s ease-in-out;
+		<body background = 'mainpagebackground.jpg'>
 
-      }
-      .fade-in.about {
-        opacity: 0.1;
-        font-family: Lucas;
-        color: #d2cfcf;
-        font-size: 150px;
-        margin-top: 250px;
-        transition: opacity .25s ease-in-out;
-        -moz-transition: opacity .25s ease-in-out;
-        -webkit-transition: opacity .25s ease-in-out;
-
-      }
-      .coding:hover {
-        opacity: 1;
-        color: #6f90ab;
-        font-size: 160px;
-      }
-      .about:hover {
-        opacity: 1;
-        color: #6f90ab;
-        font-size: 160px;
-      }
-
-      .right:hover {
-        background-color: #E3E3E3;
-      }
-      .left:hover {
-        background-color: #E3E3E3;
-      }
-    </style>
-  </head>
-  <body>
-    <center><div class="fade-in name">
-     <div class="first_Name">Lucas</div> <div class="last_Name">Stettner</div>
-   </div></center>
-
-    <div class="left">
-    <div id="coding" class="fade-in coding"><center>
-    WORK
-  </center></div>
-    </div>
-    <div class="right">
-      <div id="about" class="fade-in about"><center>
-      CONTACT
-      </center></div>
-    </div>
-
-    <script type="text/javascript">
-      $('#coding').click(function(){
-        window.location.href = "codingTest.html";
-
-      });
-
-      $('#about').click(function(){
-        window.location.href = "about.html";
-
-      });
-    </script>
+			<div class = "col-md-1">
+			    <br><img src = 'logo.png'></div>
+					<div class="useracc">
 
 
-  </body>
+					</div><br><br>
+					<a class="acc1" href="loginpage.html">Sign Out</a
+			<div class = "col-md-2"></div>
+			<div class="col-md-9" id="divv"></div>
+		</body>
+
+		<script>
+
+
+		var query = firebase.database().ref("users").orderByKey();
+		var username = sessionStorage.getItem('username');
+		var learn = sessionStorage.getItem('toLearn');
+		var know = sessionStorage.getItem('toKnow');
+		$('.useracc').append("<a class=acc href=profilee.html>Hi "+ username +", My Account</a>");
+		document.addEventListener('DOMContentLoaded', function() {
+			query.once("value")
+			  .then(function(snapshot) {
+			    snapshot.forEach(function(childSnapshot) {
+			      // key will be "ada" the first time and "alan" the second time
+			      var dataKnow = childSnapshot.val().languages.toknow;
+						var dataLearn = childSnapshot.val().languages.tolearn;
+						var username1 = childSnapshot.key;
+						var name1 = childSnapshot.val().name;
+						var email = childSnapshot.val().email;
+						if (learn == dataKnow) {
+							if (know == dataLearn) {
+								$("#divv").append("<center><br><div class=container id=rcorners><p>You Matched With: <b>"+name1+"</b></p><p><i>"+username1+"</i></p><p>"+email+"</p></div></center>");
+							}
+
+						}
+
+
+
+
+
+			  });
+			});
+			}, false);
+		</script>
 </html>
